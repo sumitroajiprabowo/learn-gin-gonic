@@ -9,8 +9,7 @@ import (
 	"github.com/sumitroajiprabowo/learn-gin-gonic/example"
 )
 
-// Create test example.go
-
+// Create Test Basic Example for testing the basic example
 func TestBasicExample(t *testing.T) {
 
 	// Create a request to send to the server
@@ -43,6 +42,7 @@ func TestBasicExample(t *testing.T) {
 }
 
 
+// Create TestBasicExampleWithStruct for testing the basic example with struct
 func TestBasicExampleWithStruct(t *testing.T) {
 
 	// Create a request to send to the server
@@ -74,7 +74,7 @@ func TestBasicExampleWithStruct(t *testing.T) {
 
 }
 
-
+// Create TestBasicExampleWithMap for testing the basic example with map
 func TestBasicExampleWithMap(t *testing.T){
 
 	// Create a request to send to the server
@@ -106,7 +106,7 @@ func TestBasicExampleWithMap(t *testing.T){
 
 }
 
-
+// Create TestBasicExampleAsciiJson for testing the basic example with ascii json
 func TestBasicExampleAsciiJson(t *testing.T){
 
 	// Create a request to send to the server

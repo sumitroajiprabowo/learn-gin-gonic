@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// BasicExample is a function to show basic example
 func BasicExample(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"code":    http.StatusOK,
@@ -15,12 +16,14 @@ func BasicExample(c *gin.Context) {
 
 }
 
+// Create person struct with fields name, age, and married
 type Person struct {
 	Name string `json:"name"`
 	Age  int    `json:"age"`
 	Married bool `json:"married"`
 }
 
+// BasicExampleWithStruct is a function to show basic example with struct
 func BasicExampleWithStruct(c *gin.Context){
 	person := Person{Name: "Danu Budi Raharjo", Age: 22, Married: false}
 	c.JSON(http.StatusOK, gin.H{
@@ -30,6 +33,7 @@ func BasicExampleWithStruct(c *gin.Context){
 	})
 }
 
+// BasicExampleWithMap is a function to show basic example with map
 func BasicExampleWithMap(c *gin.Context){
 	person := map[string]interface{}{
 		"name": "Otot Slotter",
@@ -43,6 +47,8 @@ func BasicExampleWithMap(c *gin.Context){
 	})
 }
 
+
+// BasicExampleAsciiJson is a function to show basic example with ascii json
 func BasicExampleAsciiJson(c *gin.Context){
 	data := map[string]interface{}{
 		"name": "Budi",

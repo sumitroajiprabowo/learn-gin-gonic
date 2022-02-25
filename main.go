@@ -5,8 +5,9 @@ import (
 	"github.com/sumitroajiprabowo/learn-gin-gonic/example"
 )
 
+// SetupRouter is a function to setup router
 func SetupRouter() *gin.Engine {
-	r := gin.Default()
+	r := gin.Default() // Default gin router
 	r.GET("/api/basic/example", example.BasicExample)
 	r.GET("/api/basic/example/struct", example.BasicExampleWithStruct)
 	r.GET("/api/basic/example/map", example.BasicExampleWithMap)
@@ -14,7 +15,8 @@ func SetupRouter() *gin.Engine {
 	return r
 }
 
+// RunServer is a function to run server
 func main() {
-	router := SetupRouter()
-	router.Run(":3000")
+	router := SetupRouter() // Setup router
+	router.Run(":3000") // Run on port 3000
 }
