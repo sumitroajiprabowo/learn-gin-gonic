@@ -7,7 +7,9 @@ import (
 
 func SetupRouter() *gin.Engine {
 	r := gin.Default()
-	r.GET("/api/basic", example.BasicExample)
+	r.GET("/api/basic/example", example.BasicExample)
+	r.GET("/api/basic/example/struct", example.BasicExampleWithStruct)
+	r.GET("/api/basic/example/map", example.BasicExampleWithMap)
 	return r
 }
 
