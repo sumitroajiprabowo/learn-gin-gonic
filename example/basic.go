@@ -5,11 +5,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 )
-type Person struct {
-	Name string `json:"name"`
-	Age  int    `json:"age"`
-	Married bool `json:"married"`
-}
 
 func BasicExample(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
@@ -18,4 +13,32 @@ func BasicExample(c *gin.Context) {
 		"data":    "Hello World",
 	})
 
+}
+
+type Person struct {
+	Name string `json:"name"`
+	Age  int    `json:"age"`
+	Married bool `json:"married"`
+}
+
+func BasicExampleWithStruct(c *gin.Context){
+	person := Person{Name: "Danu Budi Raharjo", Age: 22, Married: false}
+	c.JSON(http.StatusOK, gin.H{
+		"code":    http.StatusOK,
+		"status":  "Success",
+		"data":    person,
+	})
+}
+
+func BasicExampleWithMap(c *gin.Context){
+	person := map[string]interface{}{
+		"name": "Otot Slotter",
+		"age": 24,
+		"married": false,
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"code":    http.StatusOK,
+		"status":  "Success",
+		"data":    person,
+	})
 }
