@@ -17,10 +17,10 @@ func TestBasicExample(t *testing.T) {
 	router := gin.Default()
 
 	// Add the route.
-	router.GET("/api/basic", example.BasicExample)
+	router.GET("/api/basic/example", example.BasicExample)
 
 	//request to the router
-	request, _ := http.NewRequest("GET", "/api/basic", nil)
+	request, _ := http.NewRequest("GET", "/api/basic/example", nil)
 
 	//recorder
 	recorder := httptest.NewRecorder()
@@ -33,6 +33,70 @@ func TestBasicExample(t *testing.T) {
 
 	// //check response body
 	expected := `{"code":200,"data":"Hello World","status":"Success"}`
+
+	//check status code
+	assert.Equal(t, http.StatusOK, response.StatusCode)
+
+	//check response body
+	assert.Equal(t, expected, recorder.Body.String())
+
+}
+
+
+func TestBasicExampleWithStruct(t *testing.T) {
+
+	// Create a request to send to the server
+	router := gin.Default()
+
+	// Add the route.
+	router.GET("/api/basic/example/struct", example.BasicExampleWithStruct)
+
+	//request to the router
+	request, _ := http.NewRequest("GET", "/api/basic/example/struct", nil)
+
+	//recorder
+	recorder := httptest.NewRecorder()
+
+	//handler
+	router.ServeHTTP(recorder, request)
+
+	//response
+	response := recorder.Result()
+
+	// //check response body
+	expected := `{"code":200,"data":{"name":"Danu Budi Raharjo","age":22,"married":false},"status":"Success"}`
+
+	//check status code
+	assert.Equal(t, http.StatusOK, response.StatusCode)
+
+	//check response body
+	assert.Equal(t, expected, recorder.Body.String())
+
+}
+
+
+func TestBasicExampleWithMap(t *testing.T){
+
+	// Create a request to send to the server
+	router := gin.Default()
+
+	// Add the route.
+	router.GET("/api/basic/example/map", example.BasicExampleWithMap)
+
+	//request to the router
+	request, _ := http.NewRequest("GET", "/api/basic/example/map", nil)
+
+	//recorder
+	recorder := httptest.NewRecorder()
+
+	//handler
+	router.ServeHTTP(recorder, request)
+
+	//response
+	response := recorder.Result()
+
+	// //check response body
+	expected := `{"code":200,"data":{"age":24,"married":false,"name":"Otot Slotter"},"status":"Success"}`
 
 	//check status code
 	assert.Equal(t, http.StatusOK, response.StatusCode)
