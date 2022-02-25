@@ -1,4 +1,12 @@
 ####
-GET http://localhost:3000/api/basic
+GET http://localhost:3000/api/basic/example
 Accept: application/json
 
+
+####
+GET http://localhost:3000/api/basic/example/struct
+Accept: application/json
+
+####
+GET http://localhost:3000/api/basic/example/map
+Accept: application/json
