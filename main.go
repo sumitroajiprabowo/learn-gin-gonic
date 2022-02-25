@@ -10,6 +10,7 @@ func SetupRouter() *gin.Engine {
 	r.GET("/api/basic/example", example.BasicExample)
 	r.GET("/api/basic/example/struct", example.BasicExampleWithStruct)
 	r.GET("/api/basic/example/map", example.BasicExampleWithMap)
+	r.GET("/api/basic/example/ascii", example.BasicExampleAsciiJson)
 	return r
 }
 
