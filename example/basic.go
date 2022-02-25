@@ -42,3 +42,13 @@ func BasicExampleWithMap(c *gin.Context){
 		"data":    person,
 	})
 }
+
+func BasicExampleAsciiJson(c *gin.Context){
+	data := map[string]interface{}{
+		"name": "Budi",
+		"email": "budi@gmail.com",
+		"age": 24,
+		"balance": 10000,
+	}
+	c.AsciiJSON(http.StatusOK, data)
+}
