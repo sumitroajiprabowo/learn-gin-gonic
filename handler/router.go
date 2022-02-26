@@ -2,7 +2,7 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/sumitroajiprabowo/learn-gin-gonic/v1/example"
+	"github.com/sumitroajiprabowo/learn-gin-gonic/example"
 )
 
 // SetupRouter is a function to setup router
