@@ -7,7 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
-	"github.com/sumitroajiprabowo/learn-gin-gonic/v1/example"
+	"github.com/sumitroajiprabowo/learn-gin-gonic/example"
 )
 
 // Create Test Basic Example for testing the basic example

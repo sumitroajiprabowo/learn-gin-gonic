@@ -1,4 +1,4 @@
-module github.com/sumitroajiprabowo/learn-gin-gonic/v1
+module github.com/sumitroajiprabowo/learn-gin-gonic
 
 go 1.17
 
