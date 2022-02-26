@@ -1,16 +1,41 @@
 ####
 GET http://localhost:3000/api/basic/example
-Accept: application/json
-
+Content-Type: application/json
 
 ####
 GET http://localhost:3000/api/basic/example/struct
-Accept: application/json
+Content-Type: application/json
 
 ####
 GET http://localhost:3000/api/basic/example/map
-Accept: application/json
+Content-Type: application/json
 
 ####
 GET http://localhost:3000/api/basic/example/ascii
-Accept: application/json
+Content-Type: application/json
+
+####
+GET http://localhost:3000/api/basic/bindrequest/teacher
+Content-Type: application/json
+
+####
+GET http://localhost:3000/api/basic/bindrequest/student
+Content-Type: application/json
+
+####
+GET http://localhost:3000/api/basic/bindrequest/employee
+Content-Type: application/json
+
+
+####
+GET http://localhost:3000/api/bindquerystring?name=Danu&age=25&married=false
+Content-Type: application/json
+
+####
+GET http://localhost:3000/api/bindquerystring
+Content-Type: application/json
+
+
+####
+GET http://localhost:3000/api/binduri/Danu/23
+Content-Type: application/json

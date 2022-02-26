@@ -4,13 +4,16 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
-	"github.com/sumitroajiprabowo/learn-gin-gonic/example"
+	"github.com/sumitroajiprabowo/learn-gin-gonic/v1/example"
 )
 
 // Create Test Basic Example for testing the basic example
 func TestBasicExample(t *testing.T) {
+
+	gin.SetMode(gin.ReleaseMode)
 
 	// Create a request to send to the server
 	router := gin.Default()
@@ -41,9 +44,10 @@ func TestBasicExample(t *testing.T) {
 
 }
 
-
 // Create TestBasicExampleWithStruct for testing the basic example with struct
 func TestBasicExampleWithStruct(t *testing.T) {
+
+	gin.SetMode(gin.ReleaseMode)
 
 	// Create a request to send to the server
 	router := gin.Default()
@@ -75,7 +79,9 @@ func TestBasicExampleWithStruct(t *testing.T) {
 }
 
 // Create TestBasicExampleWithMap for testing the basic example with map
-func TestBasicExampleWithMap(t *testing.T){
+func TestBasicExampleWithMap(t *testing.T) {
+
+	gin.SetMode(gin.ReleaseMode)
 
 	// Create a request to send to the server
 	router := gin.Default()
@@ -107,7 +113,9 @@ func TestBasicExampleWithMap(t *testing.T){
 }
 
 // Create TestBasicExampleAsciiJson for testing the basic example with ascii json
-func TestBasicExampleAsciiJson(t *testing.T){
+func TestBasicExampleAsciiJson(t *testing.T) {
+
+	gin.SetMode(gin.ReleaseMode)
 
 	// Create a request to send to the server
 	router := gin.Default()
@@ -135,6 +143,5 @@ func TestBasicExampleAsciiJson(t *testing.T){
 
 	//check response body
 	assert.Equal(t, expected, recorder.Body.String())
-
 
 }

@@ -1,6 +1,7 @@
 {
     "go.lintOnSave": "off",
     "go.formatTool": "goimports",
+    "go.lintTool": "golint",
     "go.useLanguageServer": true,
     "[go]": {
       "editor.formatOnSave": true,
@@ -13,7 +14,7 @@
       "editor.codeActionsOnSave": {
         "source.organizeImports": true
       }
-  
+
     },
     "gopls": {
       "ui.completion.usePlaceholders": true,
