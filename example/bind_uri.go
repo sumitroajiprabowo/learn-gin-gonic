@@ -6,20 +6,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func BindUri(c *gin.Context) {
+type Children struct {
+	Name string `uri:"name" binding:"required" json:"name"`
+	Age  int    `uri:"age" binding:"required" json:"age"`
+}
 
-	var p Person
-	if err := c.ShouldBindUri(&p); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"code":   http.StatusBadRequest,
-			"status": "Error",
-			"data":   err,
-		})
-	} else {
+// BindURI is a handler function that bind uri params to struct
+func BindURI(c *gin.Context) {
+	var ch Children //initialize struct
+	if err := c.ShouldBindUri(&ch); err == nil {
 		c.JSON(http.StatusOK, gin.H{
 			"code":   http.StatusOK,
 			"status": "Success",
-			"data":   p,
+			"data":   ch,
 		})
 	}
 }
