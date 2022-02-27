@@ -8,6 +8,8 @@ import (
 // RunServer is a function to run server
 func main() {
 	gin.SetMode(gin.ReleaseMode)
+	// Disable log's color
+	gin.DisableConsoleColor()
 	router := handler.SetupRouter() // Setup router
 	router.Run(":3000")             // Run on port 3000
 }

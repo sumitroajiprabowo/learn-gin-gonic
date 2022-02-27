@@ -20,3 +20,14 @@ func FormHandler(c *gin.Context) {
 func IndexFormHandler(c *gin.Context) {
 	c.HTML(200, "form.html", nil)
 }
+
+func CreateArticlePostForm(c *gin.Context) {
+	title := c.PostForm("title")
+	desc := c.PostForm("desc")
+
+	c.JSON(200, gin.H{
+		"code":   200,
+		"status": "success",
+		"data":   []string{title, desc},
+	})
+}

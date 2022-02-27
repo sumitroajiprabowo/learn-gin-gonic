@@ -22,6 +22,7 @@ func SetupRouter() *gin.Engine {
 	r.POST("/api/basic/bindrequestformdata", example.FormHandler)
 	r.GET("/api/bindquerystring", example.BindQueryString)
 	r.GET("/api/binduri/:name/:age", example.BindURI)
+	r.POST("/api/bindformdata/article", example.CreateArticlePostForm)
 
 	return r
 }
